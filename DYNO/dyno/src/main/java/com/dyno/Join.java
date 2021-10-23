@@ -40,9 +40,10 @@ public class Join implements Listener {
         bar.removeFlag(BarFlag.CREATE_FOG);
 
         for (World world : Bukkit.getServer().getWorlds()) {
-            for (Player player : world.getPlayers())
-            bar.addPlayer(player);
-            bar.setVisible(true);
+            for (Player player : world.getPlayers()) {
+                bar.addPlayer(player);
+                bar.setVisible(true);
+            }
         }
 
         s.close();
