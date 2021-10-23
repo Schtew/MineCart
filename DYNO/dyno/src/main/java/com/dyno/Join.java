@@ -1,11 +1,18 @@
 package com.dyno;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 import org.bukkit.Bukkit;
+import org.bukkit.World;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarFlag;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
@@ -28,6 +35,16 @@ public class Join implements Listener {
         } else {
             System.out.println("User found");
         }
+
+        BossBar bar = Bukkit.getServer().createBossBar("boys",BarColor.BLUE, BarStyle.SEGMENTED_10, BarFlag.CREATE_FOG);
+        bar.removeFlag(BarFlag.CREATE_FOG);
+
+        for (World world : Bukkit.getServer().getWorlds()) {
+            for (Player player : world.getPlayers())
+            bar.addPlayer(player);
+            bar.setVisible(true);
+        }
+
         s.close();
         DB.closeConn();
     }
