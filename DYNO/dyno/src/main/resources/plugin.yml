@@ -7,6 +7,10 @@ author: dyno
 website: spigotmc.org
 prefix: Testing
 depend:
+api-version: 1.17
 softdepend:
 loadbefore:
 commands:
+  show:
+    description: Displays a basic chest GUI
+    usage: /show

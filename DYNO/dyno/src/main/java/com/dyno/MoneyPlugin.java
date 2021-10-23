@@ -10,8 +10,8 @@ public class MoneyPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("onEnable is called!");
+        this.getCommand("show").setExecutor(new CommandListener());
     }
-
 
     @Override
     public void onDisable() {
