@@ -1,0 +1,39 @@
+/*  src/Header.css  */
+.Header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  padding-left: 5%;
+  margin-bottom: 2em;
+  background-color: #fff;
+  color: #000;
+}
+.PageNames {
+  width: 100%;
+  display: flex;
+  flex: 2;
+  justify-content: left;
+  padding-left: 20%;
+  padding-right: 5%;
+  /*color: rgb(215, 215, 215);*/
+}
+
+.PageName {
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-top: 1em;
+    color: rgb(215, 215, 215);
+    font-size: 12px;
+}
+
+.Currency {
+  width: 100%;
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  margin-left: 2em;
+  margin-right: 2em;
+}
