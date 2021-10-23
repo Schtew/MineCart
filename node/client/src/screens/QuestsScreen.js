@@ -1,5 +1,7 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
+import { Link } from "react-router-dom";
+// import Route from 'react-router-dom';
 
 import '../styles/MainPage.css';
 
@@ -18,12 +20,13 @@ function QuestsScreen() {
     return (
         <div>
             <Header/>
-            <h1>Quests</h1>
+            <h1 className="Words">Quests</h1>
             <div className="ProgressBar" >
-              <h1>Kill 5 mobs</h1>
+              <h1 className="Words">Kill 5 mobs</h1>
               <ProgressBar completed={40} bgColor="green" />
             </div>
-            <button> Add Quest </button>
+            {/*<button> Add Quest </button>*/}
+            <Link to="/shopping" className="Words">GOTOOTHERSCREEN</Link>
         </div>
       );
 
