@@ -12,8 +12,8 @@ public class DB {
     private static final String PASSWORD = "minecWaft";
     private static Connection conn;
 
-    static Connection getConn() {
-        if (conn != null) {
+    static Connection getConn() throws SQLException {
+        if (conn != null && !conn.isClosed()) {
             return conn;
         } else {
             makeConn();
