@@ -1,0 +1,12 @@
+main: com.dyno.MoneyPlugin
+name: MoneyPlugin
+version: '1.0'
+description: A test plugin
+load: POSTWORLD
+author: dyno
+website: spigotmc.org
+prefix: Testing
+depend:
+softdepend:
+loadbefore:
+commands:
