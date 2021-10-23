@@ -14,6 +14,7 @@ public class MoneyPlugin extends JavaPlugin {
         getLogger().info("onEnable is called!");
         this.getCommand("show").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents((new Join()), this);
+        getServer().getPluginManager().registerEvents((new EventOne()), this);
     }
 
     @Override
