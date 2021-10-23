@@ -22,7 +22,7 @@ public class Join implements Listener {
         r.next();
         if (r.getInt(1) == 0) {
             System.out.println("User not found");
-            int currency = -1;
+            int currency = 0;
             String insertQuery = "INSERT INTO users VALUES('" + ev.getUniqueId() + "', '" + ev.getName() + "', " + currency + "," + 0 + ")";
             s.execute(insertQuery);
         } else {
