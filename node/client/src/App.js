@@ -10,6 +10,8 @@ import './styles/MainPage.css';
 import Header from './components/Header';
 import QuestsScreen from './screens/QuestsScreen';
 import ShoppingScreen from './screens/ShoppingScreen';
+import LoginScreen from './screens/LoginScreen';
+
 
 // const rootElement = document.getElementById("root");
 // render(
@@ -26,6 +28,7 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = { user_info: {user_name: '', currency: 0, cur_prog: 0, cur_quest: 0}, loggedIn: false};
   }
 
   // React.useEffect(() => {
@@ -36,13 +39,26 @@ class App extends React.Component {
 
   // function clickAddQuest = () =>
 
+
+
   render() {
+
+    const setUserHandler = (user_name, currency, cur_prog, cur_quest) => {
+      console.log("hehe");
+      this.setState({user_info:{user_name: user_name, currency: currency, cur_prog: cur_prog, cur_quest: cur_quest}});
+    }
+
+    const loginHandler = () => {
+      this.setState({loggedIn: true});
+    }
+
     return (
           // <button> Add Quest </button>}
           <BrowserRouter>
             <Switch>
-              <Route exact path='/' component={QuestsScreen}/>
-              <Route exact path='/shopping' component={ShoppingScreen}/>
+              <Route exact path='/' component={() => <QuestsScreen user_info={this.state.user_info} loggedIn={this.state.loggedIn} setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
+              <Route exact path='/shopping' component={() => <ShoppingScreen user_info={this.state.user_info} loggedIn={this.state.loggedIn} setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
+              <Route exact path='/login' component={() => <LoginScreen setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
             </Switch>
           </BrowserRouter>
     );

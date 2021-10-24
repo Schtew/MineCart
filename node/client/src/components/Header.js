@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import { Card, CardContent, Typography, Button } from '@mui/material';
 // import useState from 'react';
 
 import '../styles/Header.css';
@@ -20,16 +21,44 @@ function PageNames() {
         <div className="PageNames">
             <div className="PageName">
                 <Link to='/' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <h1 onMouseOver={darkenFont} onMouseLeave={lightenFont} >Home</h1>
+                    {/*<h1 onMouseOver={darkenFont} onMouseLeave={lightenFont} >Home</h1>*/}
+                    <Typography
+                        onMouseOver={darkenFont}
+                        onMouseLeave={lightenFont}
+                        className={"MuiTypography--heading"}
+                        variant={"h5"}
+
+                        align={"center"}
+                      >
+                        Home
+                    </Typography>
                 </Link>
             </div>
             <div className="PageName">
                 <Link to='/shopping' style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <h1 onMouseOver={darkenFont} onMouseLeave={lightenFont} >Shopping</h1>
+                   <Typography
+                        onMouseOver={darkenFont}
+                        onMouseLeave={lightenFont}
+                        className={"MuiTypography--heading"}
+                        variant={"h5"}
+
+                        align={"center"}
+                      >
+                        Shopping
+                    </Typography>
                 </Link>
             </div>
             <div className="PageName">
-                <h1>Search</h1>
+                <Typography
+                    onMouseOver={darkenFont}
+                    onMouseLeave={lightenFont}
+                    className={"MuiTypography--heading"}
+                    variant={"h5"}
+
+                    align={"center"}
+                  >
+                    Search
+                </Typography>
             </div>
         </div>
     );
@@ -76,11 +105,13 @@ class Header extends React.Component {
                 currency: data.currency
             });
             this.props.handler(data.quest_one);
+            this.props.setUserHandler(data.username, data.currency, data.quest_one);
             // setBalance(data.currency);
             // setQuest1Prog(data.quest_one >= 10 ? 100 : (data.quest_one / 10) * 100);
         });
         // setLogin(true);
         this.setState({isLoggedIn: true});
+        this.props.loginHandler();
         // this.props.handler(userData.id);
     }
 
@@ -92,8 +123,25 @@ class Header extends React.Component {
         render() {
             return (
                 <div className="Currency">
-                    <h1>KOHLS KASH:</h1>
-                    <h1>{this.props.isLoggedIn ? this.props.currency : 'log in to see balance'}</h1>
+                    {/*<Typography
+                        className={"MuiTypography--heading"}
+                        variant={"h5"}
+                        gutterBottom
+                        align={"center"}
+                        style={{ textDecoration: 'none', color: 'inherit', margin: 'auto' }}
+                      >
+                        Points:
+                    </Typography>*/}
+                    <Typography
+                        className={"MuiTypography--heading"}
+                        variant={"h5"}
+                        gutterBottom
+                        align={"center"}
+                        style={{ textDecoration: 'none', color: 'inherit', margin: 'auto' }}
+                      >
+                        {this.props.isLoggedIn ? "Points: " + this.props.currency : 'log in to see balance'}
+                    </Typography>
+                    {/*<h1>{this.props.isLoggedIn ? this.props.currency : 'log in to see balance'}</h1>*/}
                 </div>
             );
         }
@@ -169,11 +217,29 @@ class Header extends React.Component {
 
         return (
             <div className="Header">
-                <h1 className="Logo">KOHLS</h1>
+                <Typography
+                    className={"MuiTypography--heading"}
+                    variant={"h4"}
+
+                    align={"center"}
+                  >
+                    MineCart
+                </Typography>
                 <PageNames/>
                 {/*<h1 onMouseOver={darkenLogin} onMouseLeave={lightenLogin} onClick={!isLoggedIn ? getUserInfo : null}>{isLoggedIn ? user : 'Log In'}</h1>*/}
-                <Login handleChange = {handleChange} handleSubmit={handleSubmit} startLoggingIn = {startLoggingIn} isLoggingIn = {this.state.isLoggingIn} isLoggedIn = {this.state.isLoggedIn} userID = {this.state.userData.id} user={this.state.user}/>
-                <Currency isLoggedIn = {this.state.isLoggedIn} currency = {this.state.currency}/>
+                <Link to='/login' style={{ textDecoration: 'none', color: 'inherit', margin: 'auto' }}>
+                    {/*<h1>{this.props.loggedIn ? this.props.user_info.user_name : "LOG IN"}</h1>*/}
+                    <Typography
+                        className={"MuiTypography--heading"}
+                        variant={"h4"}
+
+                        align={"center"}
+                      >
+                        {this.props.loggedIn ? this.props.user_info.user_name : "Log In"}
+                    </Typography>
+                </Link>
+                {/*{<Login handleChange = {handleChange} handleSubmit={handleSubmit} startLoggingIn = {startLoggingIn} isLoggingIn = {this.state.isLoggingIn} isLoggedIn = {this.props.loggedIn} userID = {this.state.userData.id} user={this.props.user_info.user_name}/>}*/}
+                <Currency isLoggedIn = {this.props.loggedIn} currency = {this.props.user_info.currency}/>
             </div>
         );
     }
