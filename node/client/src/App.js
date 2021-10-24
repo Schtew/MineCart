@@ -22,9 +22,11 @@ import ShoppingScreen from './screens/ShoppingScreen';
 //    rootElement
 // );
 
-function App() {
+class App extends React.Component {
 
-  const [data, setData] = React.useState(null);
+  constructor(props) {
+    super(props);
+  }
 
   // React.useEffect(() => {
   //   fetch("/test")
@@ -34,15 +36,17 @@ function App() {
 
   // function clickAddQuest = () =>
 
-  return (
-        // <button> Add Quest </button>}
-        <BrowserRouter>
-          <Switch>
-            <Route exact path='/' component={QuestsScreen}/>
-            <Route exact path='/shopping' component={ShoppingScreen}/>
-          </Switch>
-        </BrowserRouter>
-  );
+  render() {
+    return (
+          // <button> Add Quest </button>}
+          <BrowserRouter>
+            <Switch>
+              <Route exact path='/' component={QuestsScreen}/>
+              <Route exact path='/shopping' component={ShoppingScreen}/>
+            </Switch>
+          </BrowserRouter>
+    );
+  }
 }
 
 export default App;

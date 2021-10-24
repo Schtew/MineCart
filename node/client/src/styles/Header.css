@@ -18,7 +18,13 @@
   justify-content: left;
   padding-left: 20%;
   padding-right: 5%;
+  background-color: orange;
   /*color: rgb(215, 215, 215);*/
+}
+
+.Logo {
+    color: black;
+    background-color: red;
 }
 
 .PageName {
@@ -27,6 +33,7 @@
     padding-top: 1em;
     color: rgb(215, 215, 215);
     font-size: 12px;
+    background-color: yellow;
 }
 
 .Currency {
@@ -36,4 +43,5 @@
   justify-content: center;
   margin-left: 2em;
   margin-right: 2em;
+  background-color: blue;
 }
