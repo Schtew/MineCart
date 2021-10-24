@@ -37,7 +37,7 @@ function reqUserData(id, Callback) {
     con.query(sql, function(err, res, fields) {
         if (err) throw err;
         console.log(res[0]);
-        let userData = {username: res[0].user_name, currency: res[0].currency, quest_one: res[0].quest_one};
+        let userData = {username: res[0].user_name, currency: res[0].currency, cur_prog: res[0].curr_prog, cur_quest: res[0].curr_quest};
         // username = res[0].user_name;
         // currency = res[0].currency;
         // console.log(username);
@@ -50,6 +50,22 @@ function reqUserData(id, Callback) {
     // console.log(currency);
     // console.log(userData);
     // return userData;
+}
+
+function resetUserQuests(id) {
+    var sql = "UPDATE users SET curr_quest=0, curr_prog=0, currency=currency+100 WHERE user_name='" + id + "'";
+    con.query(sql, function(err, res, fields) {
+        if (err) throw err;
+      });
+
+}
+
+function resetUserBalance(id) {
+    var sql = "UPDATE users SET currency=0 WHERE user_name='" + id + "'";
+    con.query(sql, function(err, res, fields) {
+        if (err) throw err;
+      });
+
 }
 
 app.get('/', (req, res) => {
@@ -70,6 +86,22 @@ app.post('/getUser', (req, res) => {
     });
     // console.log(userData);
     // res.json({ message: "Hello from server!" });
+
+});
+
+app.post('/resetQuests', (req, res) => {
+    console.log(req.body);
+    var userID = req.body.userData;
+    console.log("USER: ", userID.id);
+    resetUserQuests(userID.id);
+
+});
+
+app.post('/resetBalance', (req, res) => {
+    console.log(req.body);
+    var userID = req.body.userData;
+    console.log("USER: ", userID.id);
+    resetUserBalance(userID.id);
 
 });
 
