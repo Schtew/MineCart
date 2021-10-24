@@ -23,20 +23,27 @@ public class EventOne implements Listener {
         Entity damager = ev.getDamager();
         Entity damagee = ev.getEntity();
 
-        if (damager instanceof Player && damagee instanceof Zombie) {
+
+        if (damager instanceof Player 
+        && QuestManager.getMap().get(((Player) damager).getUniqueId()).getTitle().equals("Zombies Killed")
+        && damagee instanceof Zombie) {
             Damageable damageeDmg = (Damageable) damagee;
             Player player = (Player)damager;
             if (damageeDmg.getHealth() - ev.getDamage() < 0) {
                 Connection conn = DB.getConn();
                 Statement s = conn.createStatement();
-                String req = "SELECT quest_one FROM users WHERE uuid='" + player.getUniqueId() + "'";
+                String req = "SELECT curr_prog FROM users WHERE uuid='" + player.getUniqueId() + "'";
                 ResultSet r = s.executeQuery(req);
                 r.next();
-                int quest_one = r.getInt(1);
-                quest_one++;
-                req = "UPDATE users SET quest_one ='" + quest_one + "' WHERE uuid='" + player.getUniqueId() + "'";
+                int curr_prog = r.getInt(1);
+                if (curr_prog == 10) {
+                    QuestManager.questUpdate(player.getUniqueId());
+                    return;
+                }
+                curr_prog++;
+                req = "UPDATE users SET curr_prog ='" + curr_prog + "' WHERE uuid='" + player.getUniqueId() + "'";
                 s.executeUpdate(req);
-                DB.closeConn();
+                QuestManager.questUpdate(player.getUniqueId());
             }
         }
 

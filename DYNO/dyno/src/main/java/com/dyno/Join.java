@@ -16,12 +16,13 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
+import org.bukkit.event.player.PlayerJoinEvent;
 
 public class Join implements Listener {
     private MoneyPlugin plugin;
    
     @EventHandler
-    public void onPlayerJoin(AsyncPlayerPreLoginEvent ev) throws SQLException {
+    public void prePlayerJoin(AsyncPlayerPreLoginEvent ev) throws SQLException {
         Connection conn = DB.getConn();
         Statement s = conn.createStatement();
         String req = "SELECT COUNT(*) FROM users WHERE uuid='" + ev.getUniqueId() + "'";
@@ -35,17 +36,6 @@ public class Join implements Listener {
         } else {
             System.out.println("User found");
         }
-
-        BossBar bar = Bukkit.getServer().createBossBar("boys",BarColor.BLUE, BarStyle.SEGMENTED_10, BarFlag.CREATE_FOG);
-        bar.removeFlag(BarFlag.CREATE_FOG);
-
-        for (World world : Bukkit.getServer().getWorlds()) {
-            for (Player player : world.getPlayers()) {
-                bar.addPlayer(player);
-                bar.setVisible(true);
-            }
-        }
-
         s.close();
         DB.closeConn();
     }

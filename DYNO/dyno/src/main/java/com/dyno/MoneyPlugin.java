@@ -15,6 +15,7 @@ public class MoneyPlugin extends JavaPlugin {
         this.getCommand("show").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents((new Join()), this);
         getServer().getPluginManager().registerEvents((new EventOne()), this);
+        getServer().getPluginManager().registerEvents((new QuestManager()), this);
     }
 
     @Override
