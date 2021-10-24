@@ -11,6 +11,7 @@ import Header from './components/Header';
 import QuestsScreen from './screens/QuestsScreen';
 import ShoppingScreen from './screens/ShoppingScreen';
 import LoginScreen from './screens/LoginScreen';
+import LoginPage from './screens/LoginPage';
 
 
 // const rootElement = document.getElementById("root");
@@ -58,7 +59,8 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/' component={() => <QuestsScreen user_info={this.state.user_info} loggedIn={this.state.loggedIn} setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
               <Route exact path='/shopping' component={() => <ShoppingScreen user_info={this.state.user_info} loggedIn={this.state.loggedIn} setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
-              <Route exact path='/login' component={() => <LoginScreen setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
+              {/*<Route exact path='/login' component={() => <LoginScreen setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>*/}
+              <Route exact path='/login' component={() => <LoginPage setUserHandler={setUserHandler} loginHandler={loginHandler}/>}/>
             </Switch>
           </BrowserRouter>
     );
