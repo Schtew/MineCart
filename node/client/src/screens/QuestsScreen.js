@@ -162,9 +162,9 @@ class QuestsScreen extends React.Component {
                   <h1 className="Words">Kill 10 Zombies</h1>
                   <ProgressBar completed={this.props.user_info.progress >= 10 ? 100 : (this.props.user_info.progress / 10) * 100} bgColor="green" />
                 </div>*/}
-                <Quest description = "Kill 10 Zombies" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 1 ? (this.props.user_info.cur_prog >= 10 ? 100 : (this.props.user_info.cur_prog / 10) * 100) : 0}/>
-                <Quest description = "Collect 5 Carrots" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 2 ? (this.props.user_info.cur_prog >= 5 ? 100 : (this.props.user_info.cur_prog / 5) * 100) : 0}/>
-                <Quest description = "Mine 3 Diamonds" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 3 ? (this.props.user_info.cur_prog >= 3 ? 100 : (this.props.user_info.cur_prog / 3) * 100) : 0}/>
+                <Quest description = "Nike™ Kill 10 Zombies" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 1 ? (this.props.user_info.cur_prog >= 10 ? 100 : (this.props.user_info.cur_prog / 10) * 100) : 0}/>
+                <Quest description = "Publix™ Collect 5 Carrots" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 2 ? (this.props.user_info.cur_prog >= 5 ? 100 : (this.props.user_info.cur_prog / 5) * 100) : 0}/>
+                <Quest description = "Nike™ Shoot Your Shot" redeemed = {this.state.redeemedQuest} progress={this.props.user_info.cur_quest == 3 ? (this.props.user_info.cur_prog >= 3 ? 100 : (this.props.user_info.cur_prog / 3) * 100) : 0}/>
                 {/*<button> Add Quest </button>*/}
             </div>
           );

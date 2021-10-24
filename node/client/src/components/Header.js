@@ -5,6 +5,8 @@ import { Card, CardContent, Typography, Button } from '@mui/material';
 // import useState from 'react';
 
 import '../styles/Header.css';
+import Dollar from '../img/dollar.png';
+import Minecart from '../img/minecart.png';
 
 // const handleLogin = () => set
 
@@ -121,17 +123,8 @@ class Header extends React.Component {
         }
 
         render() {
-            return (
+            return !this.props.isLoggedIn ? (
                 <div className="Currency">
-                    {/*<Typography
-                        className={"MuiTypography--heading"}
-                        variant={"h5"}
-                        gutterBottom
-                        align={"center"}
-                        style={{ textDecoration: 'none', color: 'inherit', margin: 'auto' }}
-                      >
-                        Points:
-                    </Typography>*/}
                     <Typography
                         className={"MuiTypography--heading"}
                         variant={"h5"}
@@ -141,7 +134,19 @@ class Header extends React.Component {
                       >
                         {this.props.isLoggedIn ? "Points: " + this.props.currency : 'log in to see balance'}
                     </Typography>
-                    {/*<h1>{this.props.isLoggedIn ? this.props.currency : 'log in to see balance'}</h1>*/}
+                </div>
+            ) : (
+                <div className="Currency">
+                    <img src={Dollar} style={{width: 50, height: 50, resizeMode: 'contain'}} />
+                    <Typography
+                        className={"MuiTypography--heading"}
+                        variant={"h4"}
+                        gutterBottom
+                        align={"center"}
+                        style={{ textDecoration: 'none', color: 'inherit', marginTop:5}}
+                      >
+                        {this.props.currency}
+                    </Typography>
                 </div>
             );
         }
@@ -225,6 +230,7 @@ class Header extends React.Component {
                   >
                     MineCart
                 </Typography>
+                <img src={Minecart} style={{marginLeft: 15, width:40, height:40, resizeMode: 'contain'}}/>
                 <PageNames/>
                 {/*<h1 onMouseOver={darkenLogin} onMouseLeave={lightenLogin} onClick={!isLoggedIn ? getUserInfo : null}>{isLoggedIn ? user : 'Log In'}</h1>*/}
                 <Link to='/login' style={{ textDecoration: 'none', color: 'inherit', margin: 'auto' }}>
