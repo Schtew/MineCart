@@ -11,6 +11,6 @@ api-version: 1.17
 softdepend:
 loadbefore:
 commands:
-  show:
+  Quests:
     description: Displays a basic chest GUI
-    usage: /show
+    usage: /quests

@@ -12,7 +12,7 @@ public class MoneyPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("onEnable is called!");
-        this.getCommand("show").setExecutor(new CommandListener());
+        this.getCommand("quests").setExecutor(new CommandListener());
         getServer().getPluginManager().registerEvents((new Join()), this);
         getServer().getPluginManager().registerEvents((new EventOne()), this);
         getServer().getPluginManager().registerEvents((new QuestManager()), this);
