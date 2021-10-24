@@ -1,50 +1,58 @@
-[02:21:52] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[02:21:53] [main/INFO]: Reloading ResourceManager: Default, bukkit
-[02:21:54] [Worker-Main-2/INFO]: Loaded 7 recipes
-[02:21:56] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[02:21:56] [Server thread/INFO]: Loading properties
-[02:21:56] [Server thread/INFO]: This server is running Paper version git-Paper-349 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 9472d38)
-[02:21:56] [Server thread/INFO]: Using 4 threads for Netty based IO
-[02:21:56] [Server thread/INFO]: Server Ping Player Sample Count: 12
-[02:21:56] [Server thread/INFO]: Default game type: SURVIVAL
-[02:21:56] [Server thread/INFO]: Generating keypair
-[02:21:57] [Server thread/INFO]: Starting Minecraft server on *:25565
-[02:21:57] [Server thread/INFO]: Using default channel type
-[02:21:57] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
-[02:21:57] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
-[02:21:58] [Server thread/INFO]: [Testing] Loading MoneyPlugin v1.0
-[02:21:58] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
-[02:21:58] [Server thread/INFO]: Preparing level "world"
-[02:21:58] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[02:21:58] [Server thread/INFO]: Time elapsed: 314 ms
-[02:21:58] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
-[02:21:59] [Server thread/INFO]: Time elapsed: 123 ms
-[02:21:59] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
-[02:21:59] [Server thread/INFO]: Time elapsed: 193 ms
-[02:21:59] [Server thread/INFO]: [Testing] Enabling MoneyPlugin v1.0
-[02:21:59] [Server thread/INFO]: [Testing] onEnable is called!
-[02:21:59] [Server thread/INFO]: Running delayed init tasks
-[02:21:59] [Server thread/INFO]: Done (2.951s)! For help, type "help"
-[02:21:59] [Server thread/INFO]: Timings Reset
-[02:22:26] [User Authenticator #1/INFO]: UUID of player CoolCow247 is 31a1e387-61c4-4559-8466-61455c370dd3
-[02:22:26] [Server thread/INFO]: CoolCow247 joined the game
-[02:22:26] [Server thread/INFO]: CoolCow247[/127.0.0.1:64476] logged in with entity id 188 at ([world]203.0460256943583, 84.53260085503636, 1.3621301683470002)
-[02:22:31] [Server thread/INFO]: CoolCow247 issued server command: /show
-[02:22:44] [Server thread/INFO]: CoolCow247 issued server command: /show
-[02:22:59] [Server thread/INFO]: CoolCow247 lost connection: Disconnected
-[02:22:59] [Server thread/INFO]: CoolCow247 left the game
-[02:23:05] [Server thread/INFO]: Stopping server
-[02:23:05] [Server thread/INFO]: [Testing] Disabling MoneyPlugin v1.0
-[02:23:05] [Server thread/INFO]: [Testing] onDisable is called!
-[02:23:05] [Server thread/INFO]: Saving players
-[02:23:05] [Server thread/INFO]: Saving worlds
-[02:23:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[02:23:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
-[02:23:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
-[02:23:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[02:23:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[02:23:09] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[02:23:09] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[02:23:09] [Server thread/INFO]: Flushing Chunk IO
-[02:23:09] [Server thread/INFO]: Closing Thread Pool
-[02:23:09] [Server thread/INFO]: Closing Server
+[21:02:50] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:02:52] [main/INFO]: Found new data pack file/bukkit, loading it automatically
+[21:02:52] [main/INFO]: Reloading ResourceManager: Default, bukkit
+[21:03:05] [Worker-Main-1/INFO]: Loaded 7 recipes
+[21:03:11] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[21:03:11] [Server thread/INFO]: Loading properties
+[21:03:12] [Server thread/INFO]: This server is running Paper version git-Paper-349 (MC: 1.17.1) (Implementing API version 1.17.1-R0.1-SNAPSHOT) (Git: 9472d38)
+[21:03:12] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[21:03:12] [Server thread/INFO]: Using 4 threads for Netty based IO
+[21:03:12] [Server thread/INFO]: Default game type: SURVIVAL
+[21:03:12] [Server thread/INFO]: Generating keypair
+[21:03:12] [Server thread/INFO]: Starting Minecraft server on *:25565
+[21:03:12] [Server thread/INFO]: Using default channel type
+[21:03:12] [Server thread/INFO]: Paper: Using Java 11 compression from Velocity.
+[21:03:12] [Server thread/INFO]: Paper: Using Java cipher from Velocity.
+[21:03:13] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[21:03:13] [Server thread/INFO]: Preparing level "world"
+[21:03:14] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[21:03:15] [Server thread/INFO]: Time elapsed: 369 ms
+[21:03:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_nether
+[21:03:15] [Server thread/INFO]: Time elapsed: 320 ms
+[21:03:15] [Server thread/INFO]: Preparing start region for dimension minecraft:the_end
+[21:03:15] [Server thread/INFO]: Time elapsed: 169 ms
+[21:03:15] [Server thread/INFO]: Running delayed init tasks
+[21:03:15] [Server thread/INFO]: Done (3.884s)! For help, type "help"
+[21:03:15] [Server thread/INFO]: Timings Reset
+[21:03:47] [User Authenticator #1/INFO]: UUID of player dabears12345 is 92fab82f-c859-486c-b2a1-8e0e8b27a491
+[21:03:47] [Server thread/INFO]: dabears12345 joined the game
+[21:03:47] [Server thread/INFO]: dabears12345[/127.0.0.1:61083] logged in with entity id 3 at ([world]2.5, 69.0, 0.5)
+[21:04:41] [Server thread/INFO]: dabears12345 issued server command: /gamemode cr
+[21:04:46] [Server thread/INFO]: dabears12345 issued server command: /gamemode creative
+[21:04:46] [Server thread/INFO]: [dabears12345: Set own game mode to Creative Mode]
+[21:22:00] [Server thread/INFO]: dabears12345 issued server command: /enchant
+[21:22:28] [Server thread/INFO]: dabears12345 issued server command: /enchant dabears12345 minecraft:sharpness
+[21:22:28] [Server thread/INFO]: [dabears12345: Applied enchantment Sharpness I to dabears12345's item]
+[21:23:13] [Server thread/INFO]: dabears12345 issued server command: /enchant dabears12345 minecraft:sharpness 5
+[21:23:29] [Server thread/INFO]: dabears12345 issued server command: /enchant dabears12345 minecraft:sharpness
+[21:23:50] [Server thread/INFO]: dabears12345 issued server command: /enchant dabears12345 minecraft:sharpness 5
+[21:23:50] [Server thread/INFO]: [dabears12345: Applied enchantment Sharpness V to dabears12345's item]
+[21:23:59] [Server thread/INFO]: dabears12345 has made the advancement [Monster Hunter]
+[21:28:20] [Server thread/INFO]: dabears12345 issued server command: /give @p minecraft:spawner{BlockEntityTag:{SpawnData:{id:"zombie"}}} 1
+[21:28:20] [Server thread/INFO]: [dabears12345: Gave 1 [Spawner] to dabears12345]
+[21:28:29] [Async Chat Thread - #0/INFO]: <dabears12345> tr
+[21:32:07] [Server thread/INFO]: dabears12345 lost connection: Disconnected
+[21:32:07] [Server thread/INFO]: dabears12345 left the game
+[21:32:10] [Server thread/INFO]: Stopping server
+[21:32:10] [Server thread/INFO]: Saving players
+[21:32:10] [Server thread/INFO]: Saving worlds
+[21:32:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[21:32:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_nether]'/minecraft:the_nether
+[21:32:11] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world_the_end]'/minecraft:the_end
+[21:32:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[21:32:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[21:32:11] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[21:32:11] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[21:32:11] [Server thread/INFO]: Flushing Chunk IO
+[21:32:11] [Server thread/INFO]: Closing Thread Pool
+[21:32:11] [Server thread/INFO]: Closing Server
